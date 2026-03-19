@@ -1,0 +1,33 @@
+<!--Programmiert von Maxi-->
+
+<!DOCTYPE html>
+
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teams Erstellen</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <style>
+        *{font-family:'Trebuchet MS';text-align:center;}
+        #fehler{color:red;}
+        table{width:100%;}
+        tr{width:100%;}
+        input{width:35px;}
+    </style>
+    <body>
+        <h1>Teams Erstellen</h1>
+        <select title="klasse" id="klasse">
+            <option selected value="kl8b">Klasse 8b</option>
+            <option value="pp8b">Philosophie 8b</option>
+        </select>
+        <br>
+        <input type="number" id="teams" placeholder="0" value=0> Teams 
+        <button onclick="erstellen()">erstellen</button>
+        <br>
+        <b id="fehler"></b>
+        <p id="final"></p>
+    </body>
+    <script src="script.js"></script>
+</html>
