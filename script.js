@@ -5,7 +5,7 @@ const backup={
     "pp8b":["Maxi","Stefan","Amelie","Tilda","Max R","Piet","Nina","Josi","Jeanne","Ben","Max W","Jacob","Nenah","Kiaan","Dilara"]
 };
 
-const backupschlecht={"Maxi":["Jacob","Stefan"],"Stefan":["Maxi"],"Max R":["Jacob"],"Erik":["Jacob"],"Jacob":["Maxi","Max R","Erik"]};
+const backupschlecht={};
 const teams=document.getElementById("nummer");
 const fehler=document.getElementById("fehler");
 
