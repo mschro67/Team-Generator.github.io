@@ -5,7 +5,11 @@ const backup={
     "pp8b":["Maxi","Stefan","Amelie","Tilda","Max R","Piet","Nina","Josi","Jeanne","Ben","Max W","Jacob","Nenah","Kiaan","Dilara"]
 };
 
-const backupschlecht={};
+for (const x of backup["kl8b"].sort()){
+    document.getElementById("krank").innerHTML+=`<input type="checkbox" id="${x}" name="${x}"> <label for="${x}">${x}</label><br>`;
+}
+
+const schlecht={};
 const teams=document.getElementById("nummer");
 const fehler=document.getElementById("fehler");
 
@@ -16,6 +20,11 @@ function erstellen(){
     if (teams.value<=1 || teams.value>klasse.length){
         fehler.innerHTML=`Ungültiger wert: ${teams.value}`;
     }else{
+        for (const x of backup[document.getElementById("klasse").value]){
+            if (document.getElementById(x).checked){
+                klasse.splice(klasse.indexOf(x),1);
+            }
+        }
         let gruppen=document.getElementById("nummer").value;
         if (document.getElementById("modus").value==="schüler"){
             gruppen=Math.floor(backup[document.getElementById("klasse").value].length/document.getElementById("nummer").value);
@@ -26,19 +35,19 @@ function erstellen(){
             teamsschlecht.push([]);
         }
 
-        const randomIndex = (max) => Math.floor(Math.random() * max); //von GitHub Copilot
+        const randomIndex = (max) => Math.floor(Math.random() * max);
 
         while (klasse.length) {
-            for (let t = 0; t < gruppen && klasse.length; t++) { //von GitHub Copilot
+            for (let t = 0; t < gruppen && klasse.length; t++) {
                 const index=randomIndex(klasse.length);
-                if (klasse[index] in teamsschlecht[t] && document.getElementById("kombo").value){
+                if (klasse[index] in teamsschlecht[t] && document.getElementById("kombo").checked){
                     continue;
                 }
-                const person = klasse.splice(index, 1)[0]; //von GitHub Copilot
+                const person = klasse.splice(index, 1)[0];
                 final[t].push(person);
-                if (backupschlecht[person]){
-                    for (const x of backupschlecht[person]){
-                        teamsschlecht[t].push(x);
+                if (schlecht[person]){
+                    for (const x of schlecht[person]){
+                        schlecht[t].push(x);
                     }
                 }
             }

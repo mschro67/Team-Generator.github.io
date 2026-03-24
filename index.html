@@ -10,28 +10,32 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <style>
-        *{font-family:'Courier New';text-align:center;}
+        *{font-family:'Trebuchet MS';text-align:center;}
         #fehler{color:red;}
         table{width:100%;}
         tr{width:100%;}
         input{width:40px;}
         input,button,textarea,option,select{color:black;margin:2px;padding:1px,3px,1px,3px;border:solid 1px black;border-radius:20px;background-color:white;}
         footer{color:black;}
+        details{display:inline;}
     </style>
     <body>
-        <h1>Gruppen Erstellen</h1>
+        <h1>Teams Erstellen</h1>
         <select id="klasse">
             <option selected value="kl8b">Klasse 8b</option>
             <option value="pp8b">Philosophie 8b</option>
         </select>
+        <details id="krank">
+            <summary>kranke Schüler:innen</summary>
+        </details>
         <br>
         <input type="number" id="nummer" placeholder=0 value=3>
         <select id="modus">
-            <option value="teams">Gruppen</option>
-            <option selected value="schüler">Schüler:innen pro Gruppe</option>
+            <option value="teams">Teams</option>
+            <option selected value="schüler">Schüler:innen pro Team</option>
         </select>
         <br>
-        <input type="checkbox" value=1 id="kombo"> keine schlechten Konstelationen
+        <input type="checkbox" value=1 id="kombo"> keine schlechten Konstelationen (keine Daten)
         <br>
         <button onclick="erstellen()">erstellen</button>
         
